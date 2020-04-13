@@ -1,16 +1,16 @@
 const covid19ImpactEstimator = (data) => {
 
 	const input = data
-	const currentlyInfected = reportedCases * 10
-	const currentlyInfected = reportedCases * 50
+	const currentlyInfected1 = reportedCases * 10
+	const currentlyInfected2 = reportedCases * 50
 
 	return {
 		"data": input,
 		"impact":{
-			"currentlyInfected": currentlyInfected,
+			"currentlyInfected": currentlyInfected1 * 512,
 		},
 		"severeImpact": {
-			"currentlyInfected": currentlyInfected,
+			"currentlyInfected": currentlyInfected2,
 		}
 	};
 };
