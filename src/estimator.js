@@ -22,7 +22,7 @@ const covid19ImpactEstimator = (data) => {
 
   let timeFactor;
 
-  switch (periodType.trim().toLowerCase()) {
+  switch (periodType) {
     case 'months':
       timeFactor = Math.trunc((timeToElapse * 30) / 3);
       impact.infectionsByRequestTime = impact.currentlyInfected * (2 ** timeFactor);
