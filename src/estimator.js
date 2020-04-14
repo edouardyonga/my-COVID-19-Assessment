@@ -3,9 +3,9 @@ const covid19ImpactEstimator = (data) => {
     // region: {
     //   // avgDailyIncomeInUsd
     // },
-    reportedCases
-    // timeToElapse,
-    // periodType
+    reportedCases,
+    timeToElapse,
+    periodType
     // population,
     // totalHospitalBeds
 
@@ -20,27 +20,33 @@ const covid19ImpactEstimator = (data) => {
 
   // check if time elapsed is months, weeks,days
 
-  // let timeFactor;
+  let timeFactor;
 
-  // switch (periodType.trim().toLowerCase()) {
-  //   case 'months':
-  //     timeFactor = Math.trunc((timeToElapse * 30) / 3);
-  //     break;
+  switch (periodType.trim().toLowerCase()) {
+    case 'months':
+      timeFactor = Math.trunc((timeToElapse * 30) / 3);
+      impact.infectionsByRequestTime = impact.currentlyInfected * (2 ** timeFactor);
+      severeImpact.infectionsByRequestTime = severeImpact.currentlyInfected * (2 ** timeFactor);
+      break;
 
-  //   case 'weeks':
-  //     timeFactor = Math.trunc((timeToElapse * 7) / 3);
-  //     break;
+    case 'weeks':
+      timeFactor = Math.trunc((timeToElapse * 7) / 3);
+      impact.infectionsByRequestTime = impact.currentlyInfected * (2 ** timeFactor);
+      severeImpact.infectionsByRequestTime = severeImpact.currentlyInfected * (2 ** timeFactor);
+      break;
 
-  //   case 'days':
-  //     timeFactor = Math.trunc((timeToElapse) / 3);
-  //     break;
+    case 'days':
+      timeFactor = Math.trunc((timeToElapse) / 3);
+      impact.infectionsByRequestTime = impact.currentlyInfected * (2 ** timeFactor);
+      severeImpact.infectionsByRequestTime = severeImpact.currentlyInfected * (2 ** timeFactor);
+      break;
 
-  //   default:
-  // }
+    default:
+  }
 
   // time passed as infection rates grow
-  impact.infectionsByRequestTime = impact.currentlyInfected * 512;
-  severeImpact.infectionsByRequestTime = severeImpact.currentlyInfected * 512;
+  // impact.infectionsByRequestTime = impact.currentlyInfected * (2 ** timeFactor);
+  // severeImpact.infectionsByRequestTime = severeImpact.currentlyInfected * (2 ** timeFactor);
 
   // //challenge 2
 
