@@ -1,5 +1,5 @@
 const covid19ImpactEstimator = (data) => {
-	const  {
+	const{
 		region : {
 			avgDailyIncomeInUsd
 		},
@@ -34,7 +34,7 @@ const covid19ImpactEstimator = (data) => {
 		case 'days':
 			timeFactor = Math.trunc((timeToElapse) / 3);
 			break;
-			
+
 		default:
 	}
 
@@ -81,7 +81,7 @@ const covid19ImpactEstimator = (data) => {
 	//	 severeImpact.dollarsInFlight = {
 	//	 Math.trunc((severeImpact.infectionsByRequestedTime * compute) / newDay)
 	//	 };
-   
+
 	// }else if (periodType === 'weeks'){
 	//	 newDay = timeToElapse * 7;
 	//	 impact.dollarsInFlight = {
@@ -100,7 +100,7 @@ const covid19ImpactEstimator = (data) => {
 	//	 };
 	// }
 
-	return{	 
+	return{
 	data,
 	impact,
 	severeImpact
