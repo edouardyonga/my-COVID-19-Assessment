@@ -20,7 +20,7 @@ const covid19ImpactEstimator = (data) => {
 
   // check if time elapsed is months, weeks,days
 
-  let timeFactor;
+  // let timeFactor;
 
   // switch (periodType.trim().toLowerCase()) {
   //   case 'months':
